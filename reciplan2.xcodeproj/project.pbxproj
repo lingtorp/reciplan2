@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A2A67D4E2C316C2B00C4A68E /* reciplan2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A67D4D2C316C2B00C4A68E /* reciplan2App.swift */; };
+		A2A67D502C316C2B00C4A68E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A67D4F2C316C2B00C4A68E /* ContentView.swift */; };
+		A2A67D522C316C2B00C4A68E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A67D512C316C2B00C4A68E /* Item.swift */; };
+		A2A67D542C316C2D00C4A68E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2A67D532C316C2D00C4A68E /* Assets.xcassets */; };
+		A2A67D572C316C2D00C4A68E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2A67D562C316C2D00C4A68E /* Preview Assets.xcassets */; };
+		A2A67D612C316C2D00C4A68E /* reciplan2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A67D602C316C2D00C4A68E /* reciplan2Tests.swift */; };
+		A2A67D6B2C316C2D00C4A68E /* reciplan2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A67D6A2C316C2D00C4A68E /* reciplan2UITests.swift */; };
+		A2A67D6D2C316C2D00C4A68E /* reciplan2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A67D6C2C316C2D00C4A68E /* reciplan2UITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A2A67D5D2C316C2D00C4A68E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A2A67D422C316C2B00C4A68E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A2A67D492C316C2B00C4A68E;
+			remoteInfo = reciplan2;
+		};
+		A2A67D672C316C2D00C4A68E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A2A67D422C316C2B00C4A68E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A2A67D492C316C2B00C4A68E;
+			remoteInfo = reciplan2;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A2A67D4A2C316C2B00C4A68E /* reciplan2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reciplan2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2A67D4D2C316C2B00C4A68E /* reciplan2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reciplan2App.swift; sourceTree = "<group>"; };
+		A2A67D4F2C316C2B00C4A68E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A2A67D512C316C2B00C4A68E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		A2A67D532C316C2D00C4A68E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A2A67D562C316C2D00C4A68E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A2A67D5C2C316C2D00C4A68E /* reciplan2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = reciplan2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2A67D602C316C2D00C4A68E /* reciplan2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reciplan2Tests.swift; sourceTree = "<group>"; };
+		A2A67D662C316C2D00C4A68E /* reciplan2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = reciplan2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2A67D6A2C316C2D00C4A68E /* reciplan2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reciplan2UITests.swift; sourceTree = "<group>"; };
+		A2A67D6C2C316C2D00C4A68E /* reciplan2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reciplan2UITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A2A67D472C316C2B00C4A68E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2A67D592C316C2D00C4A68E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2A67D632C316C2D00C4A68E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A2A67D412C316C2B00C4A68E = {
+			isa = PBXGroup;
+			children = (
+				A2A67D4C2C316C2B00C4A68E /* reciplan2 */,
+				A2A67D5F2C316C2D00C4A68E /* reciplan2Tests */,
+				A2A67D692C316C2D00C4A68E /* reciplan2UITests */,
+				A2A67D4B2C316C2B00C4A68E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A2A67D4B2C316C2B00C4A68E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A2A67D4A2C316C2B00C4A68E /* reciplan2.app */,
+				A2A67D5C2C316C2D00C4A68E /* reciplan2Tests.xctest */,
+				A2A67D662C316C2D00C4A68E /* reciplan2UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A2A67D4C2C316C2B00C4A68E /* reciplan2 */ = {
+			isa = PBXGroup;
+			children = (
+				A2A67D4D2C316C2B00C4A68E /* reciplan2App.swift */,
+				A2A67D4F2C316C2B00C4A68E /* ContentView.swift */,
+				A2A67D512C316C2B00C4A68E /* Item.swift */,
+				A2A67D532C316C2D00C4A68E /* Assets.xcassets */,
+				A2A67D552C316C2D00C4A68E /* Preview Content */,
+			);
+			path = reciplan2;
+			sourceTree = "<group>";
+		};
+		A2A67D552C316C2D00C4A68E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A2A67D562C316C2D00C4A68E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A2A67D5F2C316C2D00C4A68E /* reciplan2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A2A67D602C316C2D00C4A68E /* reciplan2Tests.swift */,
+			);
+			path = reciplan2Tests;
+			sourceTree = "<group>";
+		};
+		A2A67D692C316C2D00C4A68E /* reciplan2UITests */ = {
+			isa = PBXGroup;
+			children = (
+				A2A67D6A2C316C2D00C4A68E /* reciplan2UITests.swift */,
+				A2A67D6C2C316C2D00C4A68E /* reciplan2UITestsLaunchTests.swift */,
+			);
+			path = reciplan2UITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A2A67D492C316C2B00C4A68E /* reciplan2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2A67D702C316C2D00C4A68E /* Build configuration list for PBXNativeTarget "reciplan2" */;
+			buildPhases = (
+				A2A67D462C316C2B00C4A68E /* Sources */,
+				A2A67D472C316C2B00C4A68E /* Frameworks */,
+				A2A67D482C316C2B00C4A68E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = reciplan2;
+			productName = reciplan2;
+			productReference = A2A67D4A2C316C2B00C4A68E /* reciplan2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A2A67D5B2C316C2D00C4A68E /* reciplan2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2A67D732C316C2D00C4A68E /* Build configuration list for PBXNativeTarget "reciplan2Tests" */;
+			buildPhases = (
+				A2A67D582C316C2D00C4A68E /* Sources */,
+				A2A67D592C316C2D00C4A68E /* Frameworks */,
+				A2A67D5A2C316C2D00C4A68E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A2A67D5E2C316C2D00C4A68E /* PBXTargetDependency */,
+			);
+			name = reciplan2Tests;
+			productName = reciplan2Tests;
+			productReference = A2A67D5C2C316C2D00C4A68E /* reciplan2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A2A67D652C316C2D00C4A68E /* reciplan2UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2A67D762C316C2D00C4A68E /* Build configuration list for PBXNativeTarget "reciplan2UITests" */;
+			buildPhases = (
+				A2A67D622C316C2D00C4A68E /* Sources */,
+				A2A67D632C316C2D00C4A68E /* Frameworks */,
+				A2A67D642C316C2D00C4A68E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A2A67D682C316C2D00C4A68E /* PBXTargetDependency */,
+			);
+			name = reciplan2UITests;
+			productName = reciplan2UITests;
+			productReference = A2A67D662C316C2D00C4A68E /* reciplan2UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A2A67D422C316C2B00C4A68E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					A2A67D492C316C2B00C4A68E = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					A2A67D5B2C316C2D00C4A68E = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = A2A67D492C316C2B00C4A68E;
+					};
+					A2A67D652C316C2D00C4A68E = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = A2A67D492C316C2B00C4A68E;
+					};
+				};
+			};
+			buildConfigurationList = A2A67D452C316C2B00C4A68E /* Build configuration list for PBXProject "reciplan2" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A2A67D412C316C2B00C4A68E;
+			productRefGroup = A2A67D4B2C316C2B00C4A68E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A2A67D492C316C2B00C4A68E /* reciplan2 */,
+				A2A67D5B2C316C2D00C4A68E /* reciplan2Tests */,
+				A2A67D652C316C2D00C4A68E /* reciplan2UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A2A67D482C316C2B00C4A68E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2A67D572C316C2D00C4A68E /* Preview Assets.xcassets in Resources */,
+				A2A67D542C316C2D00C4A68E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2A67D5A2C316C2D00C4A68E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2A67D642C316C2D00C4A68E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A2A67D462C316C2B00C4A68E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2A67D502C316C2B00C4A68E /* ContentView.swift in Sources */,
+				A2A67D522C316C2B00C4A68E /* Item.swift in Sources */,
+				A2A67D4E2C316C2B00C4A68E /* reciplan2App.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2A67D582C316C2D00C4A68E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2A67D612C316C2D00C4A68E /* reciplan2Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2A67D622C316C2D00C4A68E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2A67D6B2C316C2D00C4A68E /* reciplan2UITests.swift in Sources */,
+				A2A67D6D2C316C2D00C4A68E /* reciplan2UITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A2A67D5E2C316C2D00C4A68E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A2A67D492C316C2B00C4A68E /* reciplan2 */;
+			targetProxy = A2A67D5D2C316C2D00C4A68E /* PBXContainerItemProxy */;
+		};
+		A2A67D682C316C2D00C4A68E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A2A67D492C316C2B00C4A68E /* reciplan2 */;
+			targetProxy = A2A67D672C316C2D00C4A68E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A2A67D6E2C316C2D00C4A68E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A2A67D6F2C316C2D00C4A68E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A2A67D712C316C2D00C4A68E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"reciplan2/Preview Content\"";
+				DEVELOPMENT_TEAM = AW233MLSTX;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lingtorp.reciplan2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A2A67D722C316C2D00C4A68E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"reciplan2/Preview Content\"";
+				DEVELOPMENT_TEAM = AW233MLSTX;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lingtorp.reciplan2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A2A67D742C316C2D00C4A68E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AW233MLSTX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lingtorp.reciplan2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/reciplan2.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/reciplan2";
+			};
+			name = Debug;
+		};
+		A2A67D752C316C2D00C4A68E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AW233MLSTX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lingtorp.reciplan2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/reciplan2.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/reciplan2";
+			};
+			name = Release;
+		};
+		A2A67D772C316C2D00C4A68E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AW233MLSTX;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lingtorp.reciplan2UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = reciplan2;
+			};
+			name = Debug;
+		};
+		A2A67D782C316C2D00C4A68E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AW233MLSTX;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lingtorp.reciplan2UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = reciplan2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A2A67D452C316C2B00C4A68E /* Build configuration list for PBXProject "reciplan2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2A67D6E2C316C2D00C4A68E /* Debug */,
+				A2A67D6F2C316C2D00C4A68E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2A67D702C316C2D00C4A68E /* Build configuration list for PBXNativeTarget "reciplan2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2A67D712C316C2D00C4A68E /* Debug */,
+				A2A67D722C316C2D00C4A68E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2A67D732C316C2D00C4A68E /* Build configuration list for PBXNativeTarget "reciplan2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2A67D742C316C2D00C4A68E /* Debug */,
+				A2A67D752C316C2D00C4A68E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2A67D762C316C2D00C4A68E /* Build configuration list for PBXNativeTarget "reciplan2UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2A67D772C316C2D00C4A68E /* Debug */,
+				A2A67D782C316C2D00C4A68E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A2A67D422C316C2B00C4A68E /* Project object */;
+}
