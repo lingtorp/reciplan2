@@ -1,61 +1,29 @@
-//
-//  ContentView.swift
-//  reciplan2
-//
-//  Created by Lingtorp on 2024-06-30.
-//
-
 import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Environment(NavigationPathStore.self) private var navigationStore
 
     var body: some View {
         NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+            TabView {
+                RecipeListView(navigation: navigationStore.recipe)
+                    // .onOpenURL { navigationStore.handle($0) } // FIXME: Handle URLs, requires SwiftUI life-cycle
+                    .font(.title)
+                    .tabItem {
+                        Label("Recipes", systemImage: "book.closed.fill").accessibility(label: Text("Recipes"))
                     }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
+                    .tag(ContentViewSelection.View.recipe)
+                    .interactionActivityTrackingTag("Recipes")
             }
         } detail: {
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
+            Text("Select a recipe")
         }
     }
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Recipe.self, inMemory: true)
+        .environment(NavigationPathStore())
 }

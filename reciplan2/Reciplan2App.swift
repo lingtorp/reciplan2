@@ -1,18 +1,18 @@
-//
-//  reciplan2App.swift
-//  reciplan2
-//
-//  Created by Lingtorp on 2024-06-30.
-//
-
 import SwiftUI
 import SwiftData
 
 @main
 struct reciplan2App: App {
+    @State private var navigationPathStore = NavigationPathStore()
+
     var sharedModelContainer: ModelContainer = {
+        // Register value transformers
+        ColorValueTransformer.register()
+        let name = NSValueTransformerName(rawValue: String(describing: NSSecureUnarchiveFromDataTransformer.self))
+        ValueTransformer.setValueTransformer(NSSecureUnarchiveFromDataTransformer(), forName: name)
+        
         let schema = Schema([
-            Item.self,
+            Recipe.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -28,5 +28,6 @@ struct reciplan2App: App {
             ContentView()
         }
         .modelContainer(sharedModelContainer)
+        .environment(navigationPathStore)
     }
 }

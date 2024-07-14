@@ -3,18 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A2A67D4E2C316C2B00C4A68E /* reciplan2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A67D4D2C316C2B00C4A68E /* reciplan2App.swift */; };
+		A2A67D4E2C316C2B00C4A68E /* Reciplan2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A67D4D2C316C2B00C4A68E /* Reciplan2App.swift */; };
 		A2A67D502C316C2B00C4A68E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A67D4F2C316C2B00C4A68E /* ContentView.swift */; };
-		A2A67D522C316C2B00C4A68E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A67D512C316C2B00C4A68E /* Item.swift */; };
 		A2A67D542C316C2D00C4A68E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2A67D532C316C2D00C4A68E /* Assets.xcassets */; };
 		A2A67D572C316C2D00C4A68E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2A67D562C316C2D00C4A68E /* Preview Assets.xcassets */; };
 		A2A67D612C316C2D00C4A68E /* reciplan2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A67D602C316C2D00C4A68E /* reciplan2Tests.swift */; };
 		A2A67D6B2C316C2D00C4A68E /* reciplan2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A67D6A2C316C2D00C4A68E /* reciplan2UITests.swift */; };
 		A2A67D6D2C316C2D00C4A68E /* reciplan2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A67D6C2C316C2D00C4A68E /* reciplan2UITestsLaunchTests.swift */; };
+		A2BD5C1C2C31AA880064D51D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BD5C1B2C31AA850064D51D /* Extensions.swift */; };
+		A2BD5C342C43E0990064D51D /* NavigationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BD5C332C43E0960064D51D /* NavigationStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,9 +37,8 @@
 
 /* Begin PBXFileReference section */
 		A2A67D4A2C316C2B00C4A68E /* reciplan2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reciplan2.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2A67D4D2C316C2B00C4A68E /* reciplan2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reciplan2App.swift; sourceTree = "<group>"; };
+		A2A67D4D2C316C2B00C4A68E /* Reciplan2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reciplan2App.swift; sourceTree = "<group>"; };
 		A2A67D4F2C316C2B00C4A68E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A2A67D512C316C2B00C4A68E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		A2A67D532C316C2D00C4A68E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2A67D562C316C2D00C4A68E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A2A67D5C2C316C2D00C4A68E /* reciplan2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = reciplan2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,7 +46,72 @@
 		A2A67D662C316C2D00C4A68E /* reciplan2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = reciplan2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2A67D6A2C316C2D00C4A68E /* reciplan2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reciplan2UITests.swift; sourceTree = "<group>"; };
 		A2A67D6C2C316C2D00C4A68E /* reciplan2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reciplan2UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A2BD5C1B2C31AA850064D51D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A2BD5C332C43E0960064D51D /* NavigationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A2BD5C232C31B0CF0064D51D /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				MeasuredIngredient.swift,
+				Measurement.swift,
+				Recipe.swift,
+				Tag.swift,
+				ValueTransformers/ColorValueTransformer.swift,
+			);
+			target = A2A67D492C316C2B00C4A68E /* reciplan2 */;
+		};
+		A2BD5C312C43D7880064D51D /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ValueTransformers/ColorValueTransformer.swift,
+			);
+			target = A2A67D5B2C316C2D00C4A68E /* reciplan2Tests */;
+		};
+		A2BD5C322C43D7880064D51D /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ValueTransformers/ColorValueTransformer.swift,
+			);
+			target = A2A67D652C316C2D00C4A68E /* reciplan2UITests */;
+		};
+		A2BD5C352C43E0A20064D51D /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				RecipeDetail.swift,
+				RecipeEdit.swift,
+				RecipeImageView.swift,
+				RecipeInstructionView.swift,
+				RecipeListView.swift,
+				SubViews/CircleImageView.swift,
+				SubViews/DescriptionView.swift,
+				SubViews/ImagePickerView.swift,
+				SubViews/IngredientListView.swift,
+				SubViews/InstructionListView.swift,
+				SubViews/NoContentView.swift,
+				SubViews/OrderView.swift,
+				SubViews/RatingView.swift,
+				SubViews/TagView.swift,
+			);
+			target = A2A67D492C316C2B00C4A68E /* reciplan2 */;
+		};
+		A2BD5C4C2C43EAAB0064D51D /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AdaptiveView.swift,
+				Fuzzy.swift,
+				VisualEffectBlur.swift,
+			);
+			target = A2A67D492C316C2B00C4A68E /* reciplan2 */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		A2BD5C1F2C31ADBF0064D51D /* External */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (A2BD5C4C2C43EAAB0064D51D /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = External; sourceTree = "<group>"; };
+		A2BD5C212C31B0880064D51D /* Models */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (A2BD5C232C31B0CF0064D51D /* PBXFileSystemSynchronizedBuildFileExceptionSet */, A2BD5C312C43D7880064D51D /* PBXFileSystemSynchronizedBuildFileExceptionSet */, A2BD5C322C43D7880064D51D /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Models; sourceTree = "<group>"; };
+		A2BD5C2A2C31B8CE0064D51D /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (A2BD5C352C43E0A20064D51D /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A2A67D472C316C2B00C4A68E /* Frameworks */ = {
@@ -96,9 +161,13 @@
 		A2A67D4C2C316C2B00C4A68E /* reciplan2 */ = {
 			isa = PBXGroup;
 			children = (
-				A2A67D4D2C316C2B00C4A68E /* reciplan2App.swift */,
+				A2BD5C2A2C31B8CE0064D51D /* Views */,
+				A2BD5C212C31B0880064D51D /* Models */,
+				A2BD5C1F2C31ADBF0064D51D /* External */,
+				A2BD5C1B2C31AA850064D51D /* Extensions.swift */,
+				A2BD5C332C43E0960064D51D /* NavigationStore.swift */,
+				A2A67D4D2C316C2B00C4A68E /* Reciplan2App.swift */,
 				A2A67D4F2C316C2B00C4A68E /* ContentView.swift */,
-				A2A67D512C316C2B00C4A68E /* Item.swift */,
 				A2A67D532C316C2D00C4A68E /* Assets.xcassets */,
 				A2A67D552C316C2D00C4A68E /* Preview Content */,
 			);
@@ -260,9 +329,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2BD5C1C2C31AA880064D51D /* Extensions.swift in Sources */,
 				A2A67D502C316C2B00C4A68E /* ContentView.swift in Sources */,
-				A2A67D522C316C2B00C4A68E /* Item.swift in Sources */,
-				A2A67D4E2C316C2B00C4A68E /* reciplan2App.swift in Sources */,
+				A2BD5C342C43E0990064D51D /* NavigationStore.swift in Sources */,
+				A2A67D4E2C316C2B00C4A68E /* Reciplan2App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
