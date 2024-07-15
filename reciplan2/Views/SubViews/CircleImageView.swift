@@ -1,14 +1,15 @@
 import SwiftUI
 
 struct CircleRecipeImageView: View {
-    let image: UIImage?
+    let data: Data?
     var body: some View {
         GeometryReader { geo in
             let Mw = geo.size.width
             let mw = geo.size.width * 0.95
             let Mh = Mw
             let mh = mw
-            if let image = image {
+            if let data = data,
+               let image = UIImage(data: data) {
                 ZStack {
                     // Background ring
                     Image(uiImage: image).resizable().aspectRatio(contentMode: .fill)

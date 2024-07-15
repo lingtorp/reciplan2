@@ -29,10 +29,9 @@ struct RecipeEditView: View {
     
     private enum SubView: Hashable {
         case editDescription
-//        case addIngredient
+        case addIngredient
 //        case editIngredient(MeasuredIngredient)
         case addInstruction
-        case editInstruction(String)
 //        case addTag
 //        case editTag(Tag)
     }
@@ -41,30 +40,36 @@ struct RecipeEditView: View {
         HStack {
             Text("Ingredients").font(.headline)
             Spacer()
-//            NavigationLink(value: SubView.addIngredient) {
-//                Image(systemName: "plus").foregroundColor(.theme)
-//            }
+            NavigationLink(value: SubView.addIngredient) {
+                Image(systemName: "plus").foregroundColor(.theme)
+            }
         }
     }
     
     private var ingredientSection: some View {
         Section(header: ingredientSectionHeader) {
             List {
-                ForEach(recipe.ingredients) { ingredient in
-//                    NavigationLink(value: SubView.editIngredient(ingredient)) {
-//                        HStack {
-//                            Text(ingredient.ingredient.name).font(.body)
-//                            Spacer()
-//                            if let quantity = ingredient.measurement.quantity {
-//                                if let str = Measurement.numberFormatter.string(from: quantity as NSNumber) {
-//                                    Divider().padding(.vertical)
-//                                    Text(str).font(.body)
-//                                    Text("\(ingredient.measurement.unit.description)").font(.body)
-//                                }
-//                            }
-//                        }
-//                    }
-                }.onDelete(perform: deleteRecipeIngredient).onMove(perform: moveRecipeIngredient)
+                ForEach($recipe.ingredients) { ingredient in
+                    NavigationLink {
+                        // FIXME: Changes are not reflected here from the subview ...
+                        EditIngredientView(measured: ingredient)
+                    } label: {
+                        HStack {
+                            let measured = ingredient.wrappedValue
+                            Text(measured.ingredient.name).font(.body)
+                            Spacer()
+                            if let quantity = measured.measurement.quantity {
+                                if let str = Measurement.numberFormatter.string(from: quantity as NSNumber) {
+                                    Divider().padding(.vertical)
+                                    Text(str).font(.body)
+                                    Text("\(measured.measurement.unit.description)").font(.body)
+                                }
+                            }
+                        }
+                    }
+                }
+                .onDelete(perform: deleteRecipeIngredient)
+                .onMove(perform: moveRecipeIngredient)
             }
         }
         .headerProminence(.increased)
@@ -83,11 +88,15 @@ struct RecipeEditView: View {
     private var instructionSection: some View {
         Section(header: instructionSectionHeader) {
             List {
-                ForEach(recipe.instructions, id: \.self) { instruction in
-                    NavigationLink(value: SubView.editInstruction(instruction)) {
-                        Text(instruction).font(.body)
+                ForEach($recipe.instructions, id: \.self) { instruction in
+                    NavigationLink {
+                        EditInstructionView(instruction: instruction)
+                    } label: {
+                        Text(instruction.wrappedValue).font(.body)
                     }
-                }.onDelete(perform: deleteRecipeInstruction).onMove(perform: moveRecipeInstruction)
+                }
+                .onDelete(perform: deleteRecipeInstruction)
+                .onMove(perform: moveRecipeInstruction)
             }
         }
         .headerProminence(.increased)
@@ -264,36 +273,15 @@ struct RecipeEditView: View {
                 DescriptionView(description: $recipe.headline)
             case .addInstruction:
                 InstructionView(instructions: $recipe.instructions)
-            case .editInstruction(let instruction):
-                EditInstructionView(instruction: binding(for: instruction))
-//            case .addIngredient:
-//                IngredientView(ingredients: $recipe.ingredients)
-//            case .editIngredient(let ingredient):
-//                EditIngredientView(measured: binding(for: ingredient))
+            case .addIngredient:
+                IngredientView(recipe: recipe)
 //            case .addTag:
 //                NewTagView(tags: $recipe.tags)
-//            case .editTag(let tag):
-//                EditTagView(tag: binding(for: tag))
             }
         }
     }
     
     // Mark: - View Utilities
-    private func binding(for instruction: String) -> Binding<String> {
-        guard let index = recipe.instructions.firstIndex(of: instruction) else {
-            fatalError("Instruction not found in the recipe")
-        }
-        return $recipe.instructions[index]
-    }
-    
-    private func binding(for ingredient: MeasuredIngredient) -> Binding<MeasuredIngredient> {
-        guard let index = recipe.ingredients.firstIndex(of: ingredient) else {
-            fatalError("Ingredient not found in the recipe")
-        }
-        return $recipe.ingredients[index]
-
-    }
-    
     private func binding(for tag: Tag) -> Binding<Tag> {
         guard let index = recipe.tags.firstIndex(of: tag) else {
             fatalError("Tag not found in the recipe")

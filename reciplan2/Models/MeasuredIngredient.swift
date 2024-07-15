@@ -1,6 +1,7 @@
 // Data models related to Recipes
 
 import Foundation
+import SwiftData
 
 // NOTE: Models here cant be integers or something that might change.
 // For example changing the order of an enum will basically change the types in the databases
@@ -113,11 +114,6 @@ extension MeasurementSystem {
 // Used to determine how to display the recipe measurements in the UI
 enum DisplayedMeasurementSystem: Int, CaseIterable {
     case metric = 0, imperial = 1, us = 2, original = 3
-}
-
-// MARK: - Ingredient
-struct Ingredient: Codable, Hashable {
-    var name: String
 }
 
 // MARK: - MeasurementType
@@ -471,48 +467,28 @@ extension MeasurementUnit {
 
 // Nutritional values for a measured ingredient
 // Ex) 500g cauliflower
-struct NutritionalValues : Codable {
-    var kcal: Int = 0
-    var protein: Int = 0
-    var fat: Int = 0
-    var carbs: Int = 0  // = sugar + other carbs
-    var sugars: Int = 0 // Inclusive with carbs
+//@Observable
+//final class NutritionalValues {
+//    var kcal: Int = 0
+//    var protein: Int = 0
+//    var fat: Int = 0
+//    var carbs: Int = 0  // = sugar + other carbs
+//    var sugars: Int = 0 // Inclusive with carbs
+//    init() {}
+//}
+
+// MARK: - Ingredient
+struct Ingredient: Hashable, Codable {
+    var name: String = ""
 }
 
-final class MeasuredIngredient: Identifiable, ObservableObject {
-    let id = UUID()
-    var ingredient: Ingredient = Ingredient(name: "")
+struct MeasuredIngredient: Identifiable, Codable {
+    var id = UUID()
+    var ingredient: Ingredient = Ingredient()
     var measurement: Measurement = Measurement(quantity: 0.0, unit: .USCup)
-    var nutritionalValues: NutritionalValues = NutritionalValues()
+    // var nutritionalValues: NutritionalValues = NutritionalValues()
     var optional: Bool = false
     var garnish: Bool = false
-    
-    required init() { /* Required to have Codable in extension */ }
-    
-    init(_ ingredient: Ingredient, _ measurement: Measurement, _ optional: Bool = false, _ garnish: Bool = false) {
-        self.ingredient = ingredient
-        self.measurement = measurement
-        self.optional = optional
-        self.garnish = garnish
-        self.nutritionalValues = NutritionalValues()
-    }
-}
-
-extension MeasuredIngredient: Codable {
-    // NOTE: Exclude ID from JSON encoding/decoding
-    private enum CodingKeys: String, CodingKey {
-        case ingredient, measurement, nutritionalValues, optional, garnish
-    }
-    
-    convenience init(from decoder: Decoder) throws {
-        self.init()
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        ingredient = try values.decode(Ingredient.self, forKey: .ingredient)
-        measurement = try values.decode(Measurement.self, forKey: .measurement)
-        nutritionalValues = try values.decodeIfPresent(NutritionalValues.self, forKey: .nutritionalValues) ?? NutritionalValues()
-        optional = try values.decodeIfPresent(Bool.self, forKey: .optional) ?? false
-        garnish = try values.decodeIfPresent(Bool.self, forKey: .garnish) ?? false
-    }
 }
 
 // NOTE: Custom hashable due to ingredient name and type (system) are the defining traits of this model

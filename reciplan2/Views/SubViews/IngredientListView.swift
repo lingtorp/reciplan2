@@ -2,7 +2,7 @@ import SwiftUI
 
 struct IngredientListView: View {
     var recipe: Recipe
-    @Binding var highlightedIngredients: Set<UUID>
+    @Binding var highlightedIngredients: Set<MeasuredIngredient>
     @Binding var portions: Float
     @Binding var optionals: Bool
     @Binding var garnishes: Bool
@@ -40,7 +40,7 @@ struct IngredientListView: View {
     
     @ViewBuilder
     private func innerAdaptiveIngredientRowView(ingredient: MeasuredIngredient) -> some View {
-        let highlighted = highlightedIngredients.contains(ingredient.id)
+        let highlighted = highlightedIngredients.contains(ingredient)
         AdaptiveStack {
             Text(ingredient.ingredient.name).foregroundColor(highlighted ? .secondary : .primary)
             Spacer()
@@ -59,10 +59,10 @@ struct IngredientListView: View {
     private func ingredientsList(for ingredients: [MeasuredIngredient]) -> some View {
         ForEach(ingredients) { ingredient in
             Button {
-                if highlightedIngredients.contains(ingredient.id) {
-                    highlightedIngredients.remove(ingredient.id)
+                if highlightedIngredients.contains(ingredient) {
+                    highlightedIngredients.remove(ingredient)
                 } else {
-                    highlightedIngredients.insert(ingredient.id)
+                    highlightedIngredients.insert(ingredient)
                 }
             } label: {
                 #if os(iOS)

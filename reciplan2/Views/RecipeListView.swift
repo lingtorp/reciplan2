@@ -31,7 +31,10 @@ struct RecipeListView: View {
                     List {
                         ForEach(recipes) { item in
                             NavigationLink(value: SubView.recipeDetail(item)) {
-                                 Text(item.creationDate, format: Date.FormatStyle(date: .numeric, time: .standard))
+                                VStack {
+                                    Text(item.name)
+                                    Text(item.creationDate, format: Date.FormatStyle(date: .numeric, time: .standard))
+                                }
                              }
                          }
                          .onDelete(perform: deleteItems)

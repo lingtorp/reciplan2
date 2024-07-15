@@ -88,10 +88,12 @@
 				SubViews/DescriptionView.swift,
 				SubViews/ImagePickerView.swift,
 				SubViews/IngredientListView.swift,
+				SubViews/IngredientView.swift,
 				SubViews/InstructionListView.swift,
 				SubViews/NoContentView.swift,
 				SubViews/OrderView.swift,
 				SubViews/RatingView.swift,
+				SubViews/RecipeListCells.swift,
 				SubViews/TagView.swift,
 			);
 			target = A2A67D492C316C2B00C4A68E /* reciplan2 */;
@@ -100,6 +102,11 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				AdaptiveView.swift,
+				ConfettiSwift/ConfettiSwiftUI.swift,
+				ConfettiSwift/Shapes/RoundedCross.swift,
+				ConfettiSwift/Shapes/SlimRectangle.swift,
+				ConfettiSwift/Shapes/Triangle.swift,
+				"ConfettiSwift/View+ConfettiCannon.swift",
 				Fuzzy.swift,
 				VisualEffectBlur.swift,
 			);

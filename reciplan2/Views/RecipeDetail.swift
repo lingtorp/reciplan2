@@ -7,7 +7,7 @@ struct RecipeDetail: View {
     // @Environment(\.reviewController) private var reviewController
     @State private var selection: Int = 0
     var recipe: Recipe
-    @State private var ingredients: Set<UUID> = []
+    @State private var ingredients: Set<MeasuredIngredient> = []
     @State private var instruction: String? = nil // nil == all
     
     @State private var showDuplicatedRecipeToast: Bool = false
@@ -33,15 +33,6 @@ struct RecipeDetail: View {
                             withAnimation { selection = 1 } // right
                         }
                     })
-    }
-    
-    // FIXME: Move this to some place shared since this is used all over the place .. ?
-    private func cookingTimeFormatter() -> MeasurementFormatter {
-        let formatter = MeasurementFormatter()
-        formatter.locale = Locale.current
-        formatter.unitStyle = .long
-        formatter.unitOptions = .providedUnit
-        return formatter
     }
     
 //    private var ipadView: some View {

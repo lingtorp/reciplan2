@@ -45,3 +45,52 @@ struct RatingView: View {
         )
     }
 }
+
+struct RecipeRatingView: View {
+    @Environment(\.colorScheme) var colorScheme
+    let rating: Int
+    var body: some View {
+        let img = rating > 0 ? "star.leadinghalf.filled" : "star"
+        let fade = colorScheme == .light ? 5.0 : Double(rating)
+        Label("\(rating)", systemImage: img).foregroundColor(rating != 0 ? .yellow : .gray).saturation(0.2 * fade)
+    }
+}
+
+struct RecipeHeartView: View {
+    let favorite: Bool
+    var body: some View {
+        if favorite {
+            Divider().frame(maxHeight: 10)
+            Image(systemName: "heart.fill").foregroundColor(.red)
+        }
+    }
+}
+
+struct FilterView: View {
+    @Binding var filter: Filter
+    @Binding var onlyFavorites: Bool
+    var body: some View {
+        Menu {
+            Section {
+                Picker("Sort by", selection: $filter) {
+                    Label(Filter.alphabetical.localized,        systemImage: "abc").tag(Filter.alphabetical)
+                    Label(Filter.inverseAlphabetical.localized, systemImage: "abc").tag(Filter.inverseAlphabetical)
+                    Label(Filter.newestFirst.localized,         systemImage: "clock").tag(Filter.newestFirst)
+                    Label(Filter.oldestFirst.localized,         systemImage: "clock.fill").tag(Filter.oldestFirst)
+                    Label(Filter.highestRated.localized,        systemImage: "star.fill").tag(Filter.highestRated)
+                    Label(Filter.lowestRated.localized,         systemImage: "star").tag(Filter.lowestRated)
+                }
+            }
+            
+            Toggle(isOn: $onlyFavorites) {
+                Label("Favorites only", systemImage: onlyFavorites ? "heart.fill" : "heart")
+            }
+        } label: {
+            Label("Sort by", systemImage: "arrow.up.arrow.down").imageScale(.small)
+        }
+        .labelsHidden()
+        .help("Sort recipes based on an ordering")
+        .foregroundColor(.theme)
+        .pickerStyle(.automatic)
+    }
+}

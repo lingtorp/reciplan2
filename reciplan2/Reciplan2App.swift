@@ -14,10 +14,11 @@ struct reciplan2App: App {
         let schema = Schema([
             Recipe.self,
         ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
 
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            let modelContainer = try ModelContainer(for: schema, configurations: [modelConfiguration])
+            return modelContainer
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }

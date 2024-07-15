@@ -21,9 +21,8 @@ struct RecipeImageView: View {
         HStack {
             VStack {
                 ZStack {
-                    // FIXME: recipe.imageURL - maybe value transformer for it?
-                    // CircleRecipeImageView(image: recipe.image)
-                        //.frame(maxWidth: 350, maxHeight: 350).padding().scaledToFit()
+                    CircleRecipeImageView(data: recipe.image)
+                        .frame(maxWidth: 350, maxHeight: 350).padding().scaledToFit()
                     
                     #if os(iOS)
                     VStack {
@@ -43,7 +42,7 @@ struct RecipeImageView: View {
                                     .foregroundColor(.red).scaledToFit()
                             }
                             .padding().buttonStyle(.plain)
-                            //.confettiCannon(counter: $counter, num: 50, confettis: [.text("❤️")], openingAngle: Angle(degrees: 0), closingAngle: Angle(degrees: 360), radius: 200)
+                            .confettiCannon(counter: $counter, num: 50, confettis: [.text("❤️")], openingAngle: Angle(degrees: 0), closingAngle: Angle(degrees: 360), radius: 200)
                             
                             Spacer()
                             
@@ -69,12 +68,7 @@ struct RecipeImageView: View {
                                 Image(systemName: "photo").foregroundColor(Color.theme)
                                 .sheet(isPresented: self.$showImagePickerView) {
                                     ImagePickerView(sourceType: .photoLibrary) { image in
-                                        // Compress image a bit to save space
-                                        if let data = image.jpegData(compressionQuality: 0.75),
-                                           let image = UIImage(data: data) {
-                                            //self.recipe.image = image
-                                            // FIXME: FIXME
-                                        }
+                                        self.recipe.image = image.heicData()
                                     }
                                 }
                                 .scaledToFit()
@@ -132,11 +126,10 @@ struct RecipeImageView: View {
         }
     }
     
+    @Environment(\.modelContext) private var modelContext
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     private func removerecipe() {
-        Task {
-            //recipeStore.remove(recipe: recipe)
-        }
+        modelContext.delete(recipe)
         self.presentationMode.wrappedValue.dismiss()
     }
 }
