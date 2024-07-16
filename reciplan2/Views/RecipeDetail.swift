@@ -157,37 +157,33 @@ struct RecipeDetail: View {
                     }.foregroundColor(.theme).font(.body)
                 }
             }
-//            ToolbarItem {
-//                Menu {
-//                    Button {
-//                        // reviewController.lockOrientation(.landscapeLeft, andRotateTo: .landscapeLeft)
-//                        isFullscreenPresented.toggle()
-//                    } label: {
-//                        Label("Fullscreen", systemImage: "arrow.up.left.and.arrow.down.right").font(.body).foregroundColor(.theme)
-//                    }
-//                    OrderView(order: $order, optionals: $optionals, garnishes: $garnishes)
-//                    Menu("Portions \(portions, specifier: "%.1f")") {
-//                        Button("1 / 8") { portions = 1 / 4 }.tag(0)
-//                        Button("1 / 4") { portions = 1 / 4 }.tag(1)
-//                        Button("1 / 2") { portions = 1 / 2 }.tag(2)
-//                        Button("1 / 3") { portions = 1 / 3 }.tag(3)
-//                        ForEach(1..<21) { i in
-//                            Button("\(i)") { portions = Float(i) }.tag(i + 3)
-//                        }
-//                    }
-//                }
-//                Button {
-//                    let copy = recipe
-//                    copy.id = UUID().uuidString
-//                    // recipeStore.save(copy)
-//                    // FIXME: FIXME FIXME FIXME
-//                    showDuplicatedRecipeToast = true
-//                } label: {
-//                    Label("Duplicate", systemImage: "doc.on.doc")
-//                }
-//            } label: {
-//                Label("", systemImage: "ellipsis")
-//            }
+            ToolbarTitleMenu {
+                Button {
+                    // reviewController.lockOrientation(.landscapeLeft, andRotateTo: .landscapeLeft)
+                    isFullscreenPresented.toggle()
+                } label: {
+                    Label("Fullscreen", systemImage: "arrow.up.left.and.arrow.down.right").font(.body).foregroundColor(.theme)
+                }
+                OrderView(order: $order, optionals: $optionals, garnishes: $garnishes)
+                Menu("Portions \(portions, specifier: "%.1f")") {
+                    Button("1 / 8") { portions = 1 / 4 }.tag(0)
+                    Button("1 / 4") { portions = 1 / 4 }.tag(1)
+                    Button("1 / 2") { portions = 1 / 2 }.tag(2)
+                    Button("1 / 3") { portions = 1 / 3 }.tag(3)
+                    ForEach(1..<21) { i in
+                        Button("\(i)") { portions = Float(i) }.tag(i + 3)
+                    }
+                }
+                Button {
+                    // let copy = recipe
+                    // copy.id = UUID().uuidString
+                    // recipeStore.save(copy)
+                    // FIXME: FIXME FIXME FIXME
+                    showDuplicatedRecipeToast = true
+                } label: {
+                    Label("Duplicate", systemImage: "doc.on.doc")
+                }
+            }
         }
         .navigationDestination(for: RecipeDetailSubView.self) { destination in
             switch destination {
