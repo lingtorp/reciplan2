@@ -478,18 +478,17 @@ extension MeasurementUnit {
 //}
 
 // MARK: - MeasuredIngredient
-//struct MeasuredIngredient: Identifiable, Codable {
-//    var id: UUID = UUID()
 @Observable
-// FIXME: Modifying the MeasuredIngredient does not update the OG Recipe object ...
-// FIXME: seems like adding or removing MeasuredIngredients does cause the modification to propogate ..
-// FIXME: someitmes the modification propogates even w/o it tho??!
 final class MeasuredIngredient: Identifiable, Codable {
     var id: UUID = UUID()
     var name: String = ""
+    
     var measurement: Measurement = Measurement(quantity: 0.0, unit: .USCup)
+    
     // var nutritionalValues: NutritionalValues = NutritionalValues()
+    
     var optional: Bool = false
+    
     var garnish: Bool = false
 }
 
