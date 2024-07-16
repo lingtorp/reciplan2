@@ -5,7 +5,7 @@ struct EditIngredientView: View {
       case name, quantity
     }
 
-    @Binding var measured: MeasuredIngredient
+    @Bindable var measured: MeasuredIngredient
     
     @FocusState private var focusedField: FocusField?
     @State private var measurementType: MeasurementType = .volume
@@ -16,7 +16,7 @@ struct EditIngredientView: View {
             Section {
                 VStack(alignment: .leading, spacing: 0) {
                     Text("Name").font(.headline)
-                    TextField("Water", text: $measured.ingredient.name)
+                    TextField("Water", text: $measured.name)
                         .focused($focusedField, equals: .name)
                         .submitLabel(.next)
                         .onSubmit {
@@ -94,7 +94,7 @@ struct IngredientView: View {
     @State private var measured: MeasuredIngredient = MeasuredIngredient()
 
     var body: some View {
-        EditIngredientView(measured: $measured)
+        EditIngredientView(measured: measured)
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
                 Button("Add") {

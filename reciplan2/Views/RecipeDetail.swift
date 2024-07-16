@@ -6,7 +6,7 @@ struct RecipeDetail: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     // @Environment(\.reviewController) private var reviewController
     @State private var selection: Int = 0
-    var recipe: Recipe
+    @Bindable var recipe: Recipe
     @State private var ingredients: Set<MeasuredIngredient> = []
     @State private var instruction: String? = nil // nil == all
     

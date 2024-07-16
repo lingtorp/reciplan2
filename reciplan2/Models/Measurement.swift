@@ -4,7 +4,8 @@ import UIKit
 import Foundation
 
 // MARK: - Measurement
-struct Measurement: Codable, Hashable {
+@Observable
+final class Measurement: Codable {
     // Formatter used to display measurement quantities
     public static let numberFormatter = Measurement.newNumberFormatter()
     private static func newNumberFormatter() -> NumberFormatter {
@@ -19,6 +20,11 @@ struct Measurement: Codable, Hashable {
 
     var quantity: Float?
     var unit: MeasurementUnit
+    
+    init(quantity: Float, unit: MeasurementUnit) {
+        self.quantity = quantity
+        self.unit = unit
+    }
     
     // Returns volumes in mls, weights in grams for comparisons over measurement systems
     public var normalizedQuantity: Float {
@@ -72,5 +78,18 @@ struct Measurement: Codable, Hashable {
     public static func add(_ left: Measurement, _ right: Measurement?) -> Measurement {
         guard let rhs = right else { return left }
         return Measurement.add(left, rhs)
+    }
+}
+
+extension Measurement: Equatable {
+    static func ==(lhs: Measurement, rhs: Measurement) -> Bool {
+        return lhs.quantity == rhs.quantity && lhs.unit == rhs.unit
+    }
+}
+
+extension Measurement: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(quantity)
+        hasher.combine(unit)
     }
 }

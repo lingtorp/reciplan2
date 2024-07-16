@@ -477,14 +477,16 @@ extension MeasurementUnit {
 //    init() {}
 //}
 
-// MARK: - Ingredient
-struct Ingredient: Hashable, Codable {
+// MARK: - MeasuredIngredient
+//struct MeasuredIngredient: Identifiable, Codable {
+//    var id: UUID = UUID()
+@Observable
+// FIXME: Modifying the MeasuredIngredient does not update the OG Recipe object ...
+// FIXME: seems like adding or removing MeasuredIngredients does cause the modification to propogate ..
+// FIXME: someitmes the modification propogates even w/o it tho??!
+final class MeasuredIngredient: Identifiable, Codable {
+    var id: UUID = UUID()
     var name: String = ""
-}
-
-struct MeasuredIngredient: Identifiable, Codable {
-    var id = UUID()
-    var ingredient: Ingredient = Ingredient()
     var measurement: Measurement = Measurement(quantity: 0.0, unit: .USCup)
     // var nutritionalValues: NutritionalValues = NutritionalValues()
     var optional: Bool = false
@@ -494,12 +496,19 @@ struct MeasuredIngredient: Identifiable, Codable {
 // NOTE: Custom hashable due to ingredient name and type (system) are the defining traits of this model
 extension MeasuredIngredient: Hashable {
     static func ==(lhs: MeasuredIngredient, rhs: MeasuredIngredient) -> Bool {
-        return lhs.ingredient.name.lowercased() == rhs.ingredient.name.lowercased()
-        && lhs.measurement.unit.measurementType == rhs.measurement.unit.measurementType
+        return 
+            lhs.name.lowercased() == rhs.name.lowercased() &&
+            lhs.measurement.unit.measurementType == rhs.measurement.unit.measurementType &&
+            lhs.id == rhs.id &&
+            lhs.optional == rhs.optional &&
+            lhs.garnish == rhs.garnish
     }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(ingredient.name.lowercased())
+        hasher.combine(name.lowercased())
         hasher.combine(measurement.unit.measurementType)
+        hasher.combine(id)
+        hasher.combine(self.optional)
+        hasher.combine(garnish)
     }
 }

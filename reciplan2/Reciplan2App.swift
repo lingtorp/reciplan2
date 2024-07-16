@@ -18,6 +18,9 @@ struct reciplan2App: App {
 
         do {
             let modelContainer = try ModelContainer(for: schema, configurations: [modelConfiguration])
+            modelContainer.mainContext.autosaveEnabled = false
+            // Editing a recipe - changes are NOT reflect to the recipe listview with autosave TRUE
+            // Editing a recipe - changes are reflect to the recipe listview with autosave FALSE
             return modelContainer
         } catch {
             fatalError("Could not create ModelContainer: \(error)")

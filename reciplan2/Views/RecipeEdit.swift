@@ -49,20 +49,18 @@ struct RecipeEditView: View {
     private var ingredientSection: some View {
         Section(header: ingredientSectionHeader) {
             List {
-                ForEach($recipe.ingredients) { ingredient in
+                ForEach(recipe.ingredients) { ingredient in
                     NavigationLink {
-                        // FIXME: Changes are not reflected here from the subview ...
                         EditIngredientView(measured: ingredient)
                     } label: {
                         HStack {
-                            let measured = ingredient.wrappedValue
-                            Text(measured.ingredient.name).font(.body)
+                            Text(ingredient.name).font(.body)
                             Spacer()
-                            if let quantity = measured.measurement.quantity {
+                            if let quantity = ingredient.measurement.quantity {
                                 if let str = Measurement.numberFormatter.string(from: quantity as NSNumber) {
                                     Divider().padding(.vertical)
                                     Text(str).font(.body)
-                                    Text("\(measured.measurement.unit.description)").font(.body)
+                                    Text("\(ingredient.measurement.unit.description)").font(.body)
                                 }
                             }
                         }

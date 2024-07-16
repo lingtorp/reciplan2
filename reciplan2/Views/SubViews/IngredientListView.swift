@@ -42,7 +42,7 @@ struct IngredientListView: View {
     private func innerAdaptiveIngredientRowView(ingredient: MeasuredIngredient) -> some View {
         let highlighted = highlightedIngredients.contains(ingredient)
         AdaptiveStack {
-            Text(ingredient.ingredient.name).foregroundColor(highlighted ? .secondary : .primary)
+            Text(ingredient.name).foregroundColor(highlighted ? .secondary : .primary)
             Spacer()
             if let quantity = ingredient.measurement.quantity {
                 let converted = ingredient.measurement.normalized(in: measurementSystemPref,

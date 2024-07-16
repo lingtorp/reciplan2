@@ -210,9 +210,9 @@ extension Array where Element == MeasuredIngredient {
             case IngredientOrder.measurementSystem:
                 return $0.measurement.unit.measurementType.hashValue < $1.measurement.unit.measurementType.hashValue
             case IngredientOrder.alphabetical:
-                return $0.ingredient.name < $1.ingredient.name
+                return $0.name < $1.name
             case IngredientOrder.inverseAlphabetical:
-                return $0.ingredient.name > $1.ingredient.name
+                return $0.name > $1.name
             case IngredientOrder.original:
                 return true
             }
