@@ -14,7 +14,7 @@ struct reciplan2App: App {
         let schema = Schema([
             Recipe.self,
         ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
+        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
         do {
             let modelContainer = try ModelContainer(for: schema, configurations: [modelConfiguration])
