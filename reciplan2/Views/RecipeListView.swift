@@ -9,7 +9,7 @@ struct RecipeListView: View {
     @Bindable var navigation: NavigationPathWrapper
     
     enum SubView: Hashable {
-        case recipeDetail(Recipe)
+        // case recipeDetail(Recipe)
         case newRecipe
     }
 
@@ -30,7 +30,9 @@ struct RecipeListView: View {
 //                    }
                     List {
                         ForEach(recipes) { item in
-                            NavigationLink(value: SubView.recipeDetail(item)) {
+                            NavigationLink {
+                                RecipeDetail(recipe: item)
+                            } label: {
                                 VStack {
                                     RecipeListCell(recipe: item)
                                 }
@@ -50,7 +52,8 @@ struct RecipeListView: View {
                 ToolbarItem {
                     Button {
                         if let recipe = recipes.randomElement() {
-                            navigation.path.append(SubView.recipeDetail(recipe))
+                            // navigation.path.append(SubView.recipeDetail(recipe))
+                            navigation.path.append(recipe)
                         }
                     } label: {
                         Image(systemName: "shuffle").resizable().foregroundColor(.red).imageScale(.medium)
@@ -63,8 +66,7 @@ struct RecipeListView: View {
                 switch destination {
                 case .newRecipe:
                     NewRecipeView()
-                case .recipeDetail(let recipe):
-                    RecipeDetail(recipe: recipe)
+                // case .recipeDetail(let recipe):
                 }
             }
             .navigationTitle(Text("📚 Recipes"))
