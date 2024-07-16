@@ -93,6 +93,7 @@
 				SubViews/NoContentView.swift,
 				SubViews/OrderView.swift,
 				SubViews/RatingView.swift,
+				SubViews/RecipeFullscreenView.swift,
 				SubViews/RecipeListCells.swift,
 				SubViews/TagView.swift,
 			);
