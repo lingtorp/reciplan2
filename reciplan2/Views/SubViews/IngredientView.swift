@@ -5,7 +5,7 @@ struct EditIngredientView: View {
       case name, quantity
     }
 
-    @Bindable var measured: MeasuredIngredient
+    @Binding var measured: MeasuredIngredient
     
     @FocusState private var focusedField: FocusField?
     @State private var measurementType: MeasurementType = .volume
@@ -94,7 +94,7 @@ struct IngredientView: View {
     @State private var measured: MeasuredIngredient = MeasuredIngredient()
 
     var body: some View {
-        EditIngredientView(measured: measured)
+        EditIngredientView(measured: $measured)
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
                 Button("Add") {

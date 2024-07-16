@@ -47,9 +47,9 @@ struct RecipeEditView: View {
     private var ingredientSection: some View {
         Section(header: ingredientSectionHeader) {
             List {
-                ForEach(recipe.ingredients) { ingredient in
+                ForEach($recipe.ingredients) { $ingredient in
                     NavigationLink {
-                        EditIngredientView(measured: ingredient)
+                        EditIngredientView(measured: $ingredient)
                     } label: {
                         HStack {
                             Text(ingredient.name).font(.body)
