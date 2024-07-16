@@ -18,7 +18,7 @@ struct RecipeDetail: View {
     @AppStorage("showGarnishes") private var garnishes: Bool = true
     @State private var portions: Float = 1
     
-    private enum RecipeDetailSubView: Hashable {
+    private enum SubView: Hashable {
         case editRecipe(Recipe)
     }
     
@@ -185,7 +185,7 @@ struct RecipeDetail: View {
                 }
             }
         }
-        .navigationDestination(for: RecipeDetailSubView.self) { destination in
+        .navigationDestination(for: SubView.self) { destination in
             switch destination {
             case .editRecipe(let recipe):
                 RecipeEditView(recipe: recipe)
