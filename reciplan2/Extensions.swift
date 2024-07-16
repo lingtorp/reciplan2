@@ -172,7 +172,7 @@ extension Array where Element == Recipe {
             
             var tags: [Tag] = []
             for recipe in self {
-                // tags.append(contentsOf: recipe.tags) // FIXME:
+                tags.append(contentsOf: recipe.tags)
             }
             
             return Array<Tag>(Set(tags)).sorted { lhs, rhs in
