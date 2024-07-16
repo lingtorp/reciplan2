@@ -481,6 +481,7 @@ extension MeasurementUnit {
 @Observable
 final class MeasuredIngredient: Identifiable, Codable {
     var id: UUID = UUID()
+    
     var name: String = ""
     
     var measurement: Measurement = Measurement(quantity: 0.0, unit: .USCup)

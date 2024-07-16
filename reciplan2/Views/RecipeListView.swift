@@ -32,8 +32,7 @@ struct RecipeListView: View {
                         ForEach(recipes) { item in
                             NavigationLink(value: SubView.recipeDetail(item)) {
                                 VStack {
-                                    Text(item.name)
-                                    Text(item.creationDate, format: Date.FormatStyle(date: .numeric, time: .standard))
+                                    RecipeListCell(recipe: item)
                                 }
                              }
                          }

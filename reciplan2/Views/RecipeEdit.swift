@@ -24,7 +24,6 @@ struct NewRecipeView: View {
 }
 
 struct RecipeEditView: View {
-    //@EnvironmentObject var recipeStore: RecipeStore
     @Bindable var recipe: Recipe
     
     private enum SubView: Hashable {
