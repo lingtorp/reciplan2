@@ -15,7 +15,6 @@ final class Recipe {
     @Attribute(.externalStorage)
     var image: Data? = nil
     
-    // @Relationship()
     var ingredients: [MeasuredIngredient] = []
     
     @Attribute(.transformable(by: "NSSecureUnarchiveFromData"))
