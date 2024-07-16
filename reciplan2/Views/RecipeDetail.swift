@@ -143,7 +143,7 @@ struct RecipeDetail: View {
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                  if horizontalSizeClass == .compact {
-                    NavigationLink(value: RecipeDetailSubView.editRecipe(recipe)) {
+                    NavigationLink(value: SubView.editRecipe(recipe)) {
                         Text("Edit")
                     }.foregroundColor(.theme).font(.body)
                 } else {
