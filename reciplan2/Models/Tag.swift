@@ -1,18 +1,16 @@
-import Foundation
-import Combine
-import UIKit
 import SwiftUI
 import SwiftData
 
 // MARK: - Tag
 @Model
-class Tag: Identifiable {
-    let id = UUID()
+final class Tag: Identifiable {
+    var id = UUID()
+    
     // UI text name of the Tag
     var name: String
+    
     // Exported and stored in database as hexadecimal string
-    // var color: Color
-    @Attribute(.transformable(by: ColorValueTransformer.self)) 
+    @Attribute(.transformable(by: ColorValueTransformer.self))
     var color: Color
     
     init(name: String, color: Color) {
@@ -33,23 +31,3 @@ extension Tag: Equatable {
         return lhs.name == rhs.name && lhs.color.toHexadecimal() == rhs.color.toHexadecimal()
     }
 }
-
-//extension Tag: Codable {
-//    // MARK: - JSON encoding, decoding for sharing recipes
-//    private enum CodingKeys: CodingKey {
-//        case name, color
-//    }
-//    
-//    init(from decoder: Decoder) throws {
-//        let values  = try decoder.container(keyedBy: CodingKeys.self)
-//        let name    = try values.decode(String.self, forKey: .name)
-//        let color   = try values.decode(String.self, forKey: .color)
-//        self.init(name: name, color: Color(hex: color))
-//    }
-//    
-//    func encode(to encoder: Encoder) throws {
-//        var container = encoder.container(keyedBy: CodingKeys.self)
-//        try container.encode(name, forKey: .name)
-//        try container.encode(color.toHexadecimal(), forKey: .color)
-//    }
-//}

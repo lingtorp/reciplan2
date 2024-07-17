@@ -55,8 +55,6 @@ struct RecipeListView: View {
                     }
                 }
             }
-            // FIXME: Use this instead of the since we get a BINDING and not a copy as with the current approach
-            // .navigationDestination(item: Binding<Optional<Hashable>>) { destination in }
             .navigationDestination(for: SubView.self) { destination in
                 switch destination {
                 case .newRecipe:

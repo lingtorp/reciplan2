@@ -95,6 +95,7 @@
 				SubViews/RatingView.swift,
 				SubViews/RecipeFullscreenView.swift,
 				SubViews/RecipeListCells.swift,
+				SubViews/TagsView.swift,
 				SubViews/TagView.swift,
 			);
 			target = A2A67D492C316C2B00C4A68E /* reciplan2 */;

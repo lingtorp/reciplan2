@@ -10,6 +10,7 @@ final class Recipe {
     var name: String = ""      // Name of the recipe
     
     var headline: String = ""  // Description of the recipe, cannot be namned description due to overloaded naming
+    
     var tags: [Tag] = []
         
     @Attribute(.externalStorage)

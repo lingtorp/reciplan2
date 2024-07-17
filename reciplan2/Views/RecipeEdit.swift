@@ -30,8 +30,8 @@ struct RecipeEditView: View {
         case editDescription
         case addIngredient
         case addInstruction
-//        case addTag
-//        case editTag(Tag)
+        case addTag
+        case editTag(Tag)
     }
     
     private var ingredientSectionHeader: some View {
@@ -102,58 +102,60 @@ struct RecipeEditView: View {
         HStack {
             Text("Tags").font(.headline)
             Spacer()
-//            NavigationLink(value: SubView.addTag) {
-//                Image(systemName: "plus").foregroundColor(.theme)
-//            }
-            // FIXME: add tag views
+            NavigationLink(value: SubView.addTag) {
+                Image(systemName: "plus").foregroundColor(.theme)
+            }
         }
     }
     
-//    private var tagSection: some View {
-//        Section(header: tagSectionHeader) {
-//            List {
-//                // Tag selection
-//                if !recipeStore.uniqueTags.isEmpty {
-//                    ScrollView(.horizontal, showsIndicators: true) {
-//                        HStack {
-//                            // Clear button
-//                            Button(role: .destructive) {
-//                                withAnimation { recipe.tags.removeAll() }
-//                            } label: {
-//                                if !recipe.tags.isEmpty {
-//                                    Image(systemName: "xmark.circle.fill").foregroundColor(.red).imageScale(.medium)
-//                                } else {
-//                                    Image(systemName: "xmark.circle").foregroundColor(.gray).imageScale(.medium)
-//                                }
-//                            }.padding(.trailing)
-//                            
-//                            ForEach(recipeStore.uniqueTags) { tag in
-//                                if !recipe.tags.contains(tag) {
-//                                    RecipeTagView(tag: tag, selected: false).onTapGesture {
-//                                        // NOTE: Copying here to generate a new ID for the UI to keep track of
-//                                        withAnimation {
-//                                            guard !recipe.tags.contains(tag) else { return }
-//                                            recipe.tags.append(Tag(name: tag.name, color: tag.color))
-//                                            recipe.tags.sort { lhs, rhs in
-//                                                lhs.name < rhs.name
-//                                            }
-//                                        }
-//                                    }
-//                                }
-//                            }.frame(minHeight: 50)
-//                        }.frame(minHeight: 55)
-//                    }
-//                    
-//                    ForEach(recipe.tags) { tag in
-//                        NavigationLink(value: SubView.editTag(tag)) {
-//                            RecipeTagView(tag: tag, selected: false)
-//                        }
-//                    }.onDelete(perform: deleteRecipeTag).onMove(perform: moveRecipeTag)
-//                }
-//            }
-//        }
-//        .headerProminence(.increased)
-//    }
+    @Query private var tags: [Tag]
+    
+    private var tagSection: some View {
+        Section(header: tagSectionHeader) {
+            List {
+                if !tags.isEmpty {
+                    ScrollView(.horizontal, showsIndicators: true) {
+                        HStack {
+                            // Clear button
+                            Button(role: .destructive) {
+                                withAnimation { recipe.tags.removeAll() }
+                            } label: {
+                                if !recipe.tags.isEmpty {
+                                    Image(systemName: "xmark.circle.fill").foregroundColor(.red).imageScale(.medium)
+                                } else {
+                                    Image(systemName: "xmark.circle").foregroundColor(.gray).imageScale(.medium)
+                                }
+                            }.padding(.trailing)
+                            
+                            ForEach(tags) { tag in
+                                if !recipe.tags.contains(tag) {
+                                    RecipeTagView(tag: tag, selected: false)
+                                        .onTapGesture {
+                                        guard !recipe.tags.contains(tag) else { return }
+                                        withAnimation {
+                                            recipe.tags.append(tag)
+                                            recipe.tags.sort { lhs, rhs in
+                                                lhs.name < rhs.name
+                                            }
+                                        }
+                                    }
+                                }
+                            }.frame(minHeight: 50)
+                        }.frame(minHeight: 55)
+                    }
+                    
+                    ForEach(recipe.tags) { tag in
+                        NavigationLink(value: SubView.editTag(tag)) {
+                            RecipeTagView(tag: tag, selected: false)
+                        }
+                    }
+                    .onDelete(perform: deleteRecipeTag)
+                    .onMove(perform: moveRecipeTag)
+                }
+            }
+        }
+        .headerProminence(.increased)
+    }
     
     @State private var languageSearchQuery: String = ""
     private var filteredLanguageCodes: [Locale.LanguageCode] {
@@ -256,7 +258,7 @@ struct RecipeEditView: View {
             instructionSection
             
             // Tags
-            // tagSection
+            tagSection
             
             // Extra stuff
             extraSection
@@ -271,8 +273,10 @@ struct RecipeEditView: View {
                 InstructionView(instructions: $recipe.instructions)
             case .addIngredient:
                 IngredientView(recipe: recipe)
-//            case .addTag:
-//                NewTagView(tags: $recipe.tags)
+            case .addTag:
+                TagView(recipe: recipe)
+            case .editTag(let tag):
+                EditTagView(tag: tag)
             }
         }
     }
