@@ -31,9 +31,7 @@ struct RecipeListView: View {
                     List {
                         ForEach(recipes) { item in
                             NavigationLink(value: SubView.recipeDetail(item)) {
-                                VStack {
-                                    RecipeListCell(recipe: item)
-                                }
+                                RecipeListCell(recipe: item)
                              }
                          }
                          .onDelete(perform: deleteItems)
