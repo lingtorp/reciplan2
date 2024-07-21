@@ -9,13 +9,21 @@ final class Tag: Identifiable {
     // UI text name of the Tag
     var name: String
     
-    // Exported and stored in database as hexadecimal string
     @Attribute(.transformable(by: ColorValueTransformer.self))
-    var color: Color
+    private var _color: UIColor
+    
+    var color: Color {
+        get {
+            Color(uiColor: _color)
+        }
+        set(newValue) {
+            _color = UIColor(newValue)
+        }
+    }
     
     init(name: String, color: Color) {
         self.name = name
-        self.color = color
+        self._color = UIColor(color)
     }
 }
 
