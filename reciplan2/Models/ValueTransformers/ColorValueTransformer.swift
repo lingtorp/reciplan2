@@ -6,15 +6,13 @@ public final class ColorValueTransformer: ValueTransformer {
     // Writing (to DB)
     override public func transformedValue(_ value: Any?) -> Any? {
         guard let color = value as? UIColor else { return nil }
-        guard let data = color.toHexadecimal().data(using: .utf8) else { return nil }
-        return NSData(data: data)
+        return try? NSKeyedArchiver.archivedData(withRootObject: color, requiringSecureCoding: true)
     }
 
     // Reading (from DB)
     override public func reverseTransformedValue(_ value: Any?) -> Any? {
         guard let data = value as? Data else { return nil }
-        guard let string = String(data: data, encoding: .utf8) else { return nil }
-        return UIColor(hex: string)
+        return try? NSKeyedUnarchiver.unarchivedObject(ofClass: UIColor.self, from: data)
     }
     
     /// class of the "output" objects, as returned by transformedValue:
