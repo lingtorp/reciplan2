@@ -27,15 +27,8 @@ final class Tag: Identifiable {
     }
 }
 
-extension Tag: Hashable {
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
-        hasher.combine(color.toHexadecimal())
-    }
-}
-
 extension Tag: Equatable {
     static func ==(lhs: Tag, rhs: Tag) -> Bool {
-        return lhs.name == rhs.name && lhs.color.toHexadecimal() == rhs.color.toHexadecimal()
+        return lhs.name == rhs.name && lhs.color == rhs.color
     }
 }
