@@ -2,6 +2,7 @@ import Foundation
 import SwiftData
 import SwiftUI
 
+// FIXME: Make Recipe exportable/importable from JSON
 @Model
 final class Recipe {
     var favorite: Bool = false
@@ -33,7 +34,6 @@ final class Recipe {
     
     var languageCode: String = Locale.current.language.languageCode?.identifier ?? "en" // ISO 639-1 language code
     
-    // @Transient since we want to compute these from the MeasuredIngredients?
     var calorieCount: Int = 0
     
     var rating: Int = 0 // in range [0, 5]

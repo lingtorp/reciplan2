@@ -13,7 +13,7 @@ struct RecipeTagView: View {
             .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous), style: FillStyle(eoFill: true, antialiased: true))
             .contentShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
             .overlay(
-                RoundedRectangle(cornerRadius: 12, style: .continuous).stroke(tag.color, lineWidth: 1.5)
+                RoundedRectangle(cornerRadius: 12, style: .continuous).stroke(tag.color ?? .gray, lineWidth: 1.5)
             )
             .padding(1) // Padding for overlay line that goes out of clip/content shape
     }

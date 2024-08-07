@@ -1,7 +1,7 @@
-//
-//  RecipeTimelineView.swift
-//  reciplan2
-//
-//  Created by Lingtorp on 2024-07-20.
-//
+import SwiftUI
 
+struct TimelineView: View {
+    var body: some View {
+        Text("Timeline view")
+    }
+}
